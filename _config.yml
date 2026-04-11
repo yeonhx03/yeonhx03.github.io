@@ -33,9 +33,9 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name     : "이도현"
-  avatar   : "https://github.com/yeonhx03.png" # github 프로필 사진 연동
-  bio      : "Everything's gonna be Allright"
+  name     : "이도현" # 좌측 사이드 바 이름
+  avatar   : "https://github.com/yeonhx03.png" # github 프로필 사진 연동 # 좌측 사이드 바 프로필 사진
+  bio      : "Everything's gonna be Allright" # 좌측 프로필 아래 문구
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
