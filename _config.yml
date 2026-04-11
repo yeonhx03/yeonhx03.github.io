@@ -34,7 +34,7 @@ plugins:
 
 author:
   name     : "이도현"
-  avatar   : "https://github.com/yeonhx03.png" # 💥 형님의 깃허브 프로필 사진을 자동으로 끌어오도록 개조!
+  avatar   : "https://github.com/yeonhx03.png" # github 프로필 사진 연동
   bio      : "Everything's gonna be Allright"
   links:
     - label: "GitHub"
