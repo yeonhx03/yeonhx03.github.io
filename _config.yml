@@ -1,24 +1,22 @@
-# Welcome to Jekyll!
-
 # Site settings
 title: "공부기록"
 url: "https://yeonhx03.github.io"
 locale: "ko-KR"
 email: "yeonhx915@gmail.com"
-description: >-
-  허허허허
+description: "허허허허"
 github_username: "yeonhx03"
-minimal_mistakes_skin: "dark" # 기본 테마는 default
+minimal_mistakes_skin: "dark"
 search: true
 
 # Build settings
 markdown: kramdown
-remote_theme: mmistakes/minimal-mistakes
+remote_theme: "mmistakes/minimal-mistakes"
+
 # Outputting
 permalink: /:categories/:title/
 paginate: 5
 paginate_path: /page:num/
-timezone: "Asia/Seoul" 
+timezone: "Asia/Seoul"
 
 include:
   - _pages
@@ -33,9 +31,9 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name     : "이도현" # 좌측 사이드 바 이름
-  avatar   : "https://github.com/yeonhx03.png" # github 프로필 사진 연동 # 좌측 사이드 바 프로필 사진
-  bio      : "Everything's gonna be Allright" # 좌측 프로필 아래 문구
+  name: "이도현"
+  avatar: "https://github.com/yeonhx03.png"
+  bio: "Everything's gonna be Allright"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
@@ -62,6 +60,8 @@ defaults:
       comments: true
       share: true
       related: true
+      toc: true           # 목차 활성화 추가
+      toc_sticky: true    # 목차 고정 추가
   # _pages
   - scope:
       path: "_pages"
