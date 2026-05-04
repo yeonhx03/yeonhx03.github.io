@@ -21,27 +21,33 @@
     </div>
 
     <div class="author__urls-wrapper">
-      <ul class="author__urls social-icons">
-        {% if site.author.location %}
-          <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
-            <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">{{ site.author.location }}</span>
-          </li>
-        {% endif %}
-        
+      <!--location 설정-->
+      {% if site.author.location %}
+        <div style="margin-bottom: 10px; font-size: 0.9em; color: #555;">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> {{ site.author.location }}
+        </div>
+      {% endif %}
+      <!--SNS Link 설정-->
+      <ul class="social-icons--horizontal">
         {% if site.author.links %}
           {% for link in site.author.links %}
-            <li><a href="{{ link.url }}" rel="nofollow noopener noreferrer"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i><span class="label">{{ link.label }}</span></a></li>
+            <li>
+              <a href="{{ link.url }}" rel="nofollow noopener noreferrer" title="{{ link.label }}">
+                <i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i>
+              </a>
+            </li>
           {% endfor %}
         {% endif %}
       </ul>
     </div>
 
+<!--방문자 수 집계-->
 <div style="text-align: center; margin-top: 20px;">
   <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fyeonhx03.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Total+Hits&edge_flat=false" alt="Hits"/>
 </div>
 
   </div>
-  
+  <!--github 잔디-->
   <div class="sidebar-grass" style="margin-top: 30px; text-align: center;">
     <h4 class="nav__title" style="margin-bottom: 10px; font-size: 0.9em; text-transform: uppercase; color: #555;">
       GitHub Contributions
