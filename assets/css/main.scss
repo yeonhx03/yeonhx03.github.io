@@ -1,10 +1,10 @@
 ---
-# 이 대시 3개는 Jekyll이 이 파일을 처리하게 만드는 마법의 주문입니다. 지우지 마세요!
+# 이 대시 3개는 지우지 마세요!
 ---
 
 @import "minimal-mistakes"; /* 기존 테마 디자인 통째로 가져오기 */
 
-/* --- 여기서부터 형님만의 커스텀 디자인 --- */
+/* --- 커스텀 디자인 --- */
 
 /* 1. 전체 배경 흰색 통일 및 불필요한 이미지 제거 */
 body {
@@ -37,4 +37,28 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 50px;
+}
+
+/* 소셜 아이콘 가로 정렬 */
+.social-icons--horizontal {
+  display: flex;           /* 가로로 정렬 */
+  flex-wrap: wrap;        /* 자리가 부족하면 다음 줄로 */
+  justify-content: center; /* 중앙 정렬 */
+  list-style: none;       /* 점 없애기 */
+  padding: 0;
+  margin: 15px 0;
+}
+
+.social-icons--horizontal li {
+  margin: 0 10px;         /* 아이콘끼리 좌우 간격 */
+  font-size: 1.2rem;      /* 아이콘 크기 살짝 키우기 */
+}
+
+.social-icons--horizontal li a {
+  color: #333;            /* 아이콘 색상 */
+  text-decoration: none;
+}
+
+.social-icons--horizontal li a:hover {
+  color: #79C83D;         /* 마우스 올렸을 때 잔디색으로 변신 */
 }
