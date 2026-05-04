@@ -1,0 +1,47 @@
+<div class="sidebar sticky">
+  
+  <div itemscope itemtype="https://schema.org/Person">
+    {% if site.author.avatar %}
+      <div class="author__avatar">
+        <a href="/">
+          <img src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}" itemprop="image">
+        </a>
+      </div>
+    {% endif %}
+
+    <div class="author__content">
+      <h3 class="author__name" itemprop="name">
+        <a class="u-url" rel="me" href="{{ site.url }}{{ site.baseurl }}/" itemprop="url">{{ site.author.name }}</a>
+      </h3>
+      {% if site.author.bio %}
+        <p class="author__bio" itemprop="description">
+          {{ site.author.bio }}
+        </p>
+      {% endif %}
+    </div>
+
+    <div class="author__urls-wrapper">
+      <ul class="author__urls social-icons">
+        {% if site.author.location %}
+          <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+            <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">{{ site.author.location }}</span>
+          </li>
+        {% endif %}
+        
+        {% if site.author.links %}
+          {% for link in site.author.links %}
+            <li><a href="{{ link.url }}" rel="nofollow noopener noreferrer"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i><span class="label">{{ link.label }}</span></a></li>
+          {% endfor %}
+        {% endif %}
+      </ul>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="https://hits.seeyoufarm.com">
+        <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fyeonhx03.github.io&count_bg=%23000000&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Hits&edge_flat=true" alt="Hits"/>
+      </a>
+    </div>
+
+  </div>
+  
+  </div>
