@@ -62,3 +62,64 @@ body {
 .social-icons--horizontal li a:hover {
   color: #79C83D;         /* 마우스 올렸을 때 잔디색으로 변신 */
 }
+
+/* --- 사이드바 전체 중앙 정렬 --- */
+
+/* 1. 사이드바 전체 컨테이너 */
+.sidebar {
+  text-align: center !important; /* 모든 텍스트 기본 중앙 정렬 */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 내부 요소들 가로축 중앙 정렬 */
+}
+
+/* 2. 프로필 이미지 중앙 정렬 */
+.author__avatar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.author__avatar img {
+  margin: 0 auto !important; /* 이미지 강제 중앙 */
+  max-width: 150px;         /* 크기 적절히 조절 (취향껏) */
+}
+
+/* 3. 이름 및 한줄 소개 중앙 정렬 */
+.author__content {
+  padding-left: 0 !important;
+  text-align: center !important;
+  width: 100%;
+}
+
+/* 4. 로케이션 및 소셜 아이콘 구역 */
+.author__urls-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 소셜 아이콘들 가로로 모으기 (아까 드린 코드 포함) */
+.social-icons--horizontal {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+/* 5. 깃허브 잔디(Grass) 중앙 정렬 확인 */
+.sidebar-grass {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.sidebar-grass img {
+  display: block;
+  margin: 0 auto;
+}
