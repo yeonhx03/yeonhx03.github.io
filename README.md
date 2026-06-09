@@ -1,27 +1,67 @@
-# Minimal Mistakes remote theme starter
+# yeonhx03.github.io
 
-Click [**Use this template**](https://github.com/mmistakes/mm-github-pages-starter/generate) button above for the quickest method of getting started with the [Minimal Mistakes Jekyll theme](https://github.com/mmistakes/minimal-mistakes).
+GitHub Pages에서 운영하는 Jekyll 기반 개인 기술 블로그입니다. Minimal Mistakes remote theme을 사용하되, 테마 원본을 복제하지 않고 필요한 include와 Sass partial만 override합니다.
 
-Contains basic configuration to get you a site with:
+## Local setup
 
-- Sample posts.
-- Sample top navigation.
-- Sample author sidebar with social links.
-- Sample footer links.
-- Paginated home page.
-- Archive pages for posts grouped by year, category, and tag.
-- Sample about page.
-- Sample 404 page.
-- Site wide search.
+Ruby 3.x 사용을 권장합니다. macOS 기본 시스템 Ruby 2.6은 일부 native gem 설치가 실패할 수 있습니다.
 
-Replace sample content with your own and [configure as necessary](https://mmistakes.github.io/minimal-mistakes/docs/configuration/).
+```bash
+bundle install
+bundle exec jekyll serve --livereload
+```
 
----
+브라우저에서 `http://127.0.0.1:4000`을 열어 확인합니다.
 
-## Troubleshooting
+빌드만 확인할 때는 다음 명령을 실행합니다.
 
-If you have a question about using Jekyll, start a discussion on the [Jekyll Forum](https://talk.jekyllrb.com/) or [StackOverflow](https://stackoverflow.com/questions/tagged/jekyll). Other resources:
+```bash
+bundle exec jekyll build
+```
 
-- [Ruby 101](https://jekyllrb.com/docs/ruby-101/)
-- [Setting up a Jekyll site with GitHub Pages](https://jekyllrb.com/docs/github-pages/)
-- [Configuring GitHub Metadata](https://github.com/jekyll/github-metadata/blob/master/docs/configuration.md#configuration) to work properly when developing locally and avoid `No GitHub API authentication could be found. Some fields may be missing or have incorrect data.` warnings.
+## GitHub Pages 배포
+
+1. GitHub 저장소 이름을 `yeonhx03.github.io`로 유지합니다.
+2. 변경 사항을 기본 브랜치에 push합니다.
+3. GitHub 저장소의 `Settings > Pages`에서 GitHub Pages가 기본 브랜치를 사용하도록 설정합니다.
+4. 배포 후 `https://yeonhx03.github.io`에서 확인합니다.
+
+## 수정할 placeholder
+
+블로그 기본 정보는 `_config.yml`에서 바꿉니다.
+
+- `title`
+- `name`
+- `description`
+- `url`
+- `repository`
+- `github_username`
+- `author.name`
+- `author.avatar`
+
+About 페이지 문구는 `_pages/about.md`에서 수정합니다.
+
+## 방문자 counter
+
+기본 방문자 수 표시는 `hits.sh`의 외부 SVG 요청을 사용합니다. 정적 GitHub Pages에서는 서버 측 방문자 수를 직접 계산하지 않습니다.
+
+설정 위치:
+
+```yml
+visitor_counter:
+  enabled: true
+  provider: "hits"
+  target: "yeonhx03.github.io"
+```
+
+다른 provider로 바꾸려면 `_includes/sidebar/visitor-counter.html`에서 provider 분기를 추가하고 `_config.yml`의 `visitor_counter.provider` 값을 변경합니다.
+
+## 구조
+
+- `_config.yml`: 사이트 기본 정보, remote theme, 플러그인, 기본 post 옵션
+- `_data/navigation.yml`: 상단 네비게이션
+- `_includes/author-profile.html`: 좌측 sidebar 구성
+- `_includes/sidebar/visitor-counter.html`: 방문자 counter adapter
+- `_includes/sidebar/category-list.html`: 자동 category 목록
+- `_includes/masthead.html`: 상단 masthead와 Minimal Mistakes 기본 검색 버튼
+- `_sass/custom/`: Apple 스타일 커스텀 토큰과 UI 스타일

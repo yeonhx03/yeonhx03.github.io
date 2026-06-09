@@ -1,0 +1,15 @@
+{% assign counter = site.visitor_counter %}
+{% if counter.enabled %}
+  <div class="author__stat visitor-counter" data-counter-provider="{{ counter.provider | default: 'hits' }}">
+    <span>방문자 수</span>
+    {% if counter.provider == "hits" %}
+      {% assign counter_target = counter.target | default: site.url | remove: "https://" | remove: "http://" %}
+      <img
+        src="https://hits.sh/{{ counter_target }}.svg?style=flat-square&label=&color=ffffff&labelColor=ffffff"
+        alt="전체 방문자 수"
+        loading="lazy">
+    {% else %}
+      <strong>설정 필요</strong>
+    {% endif %}
+  </div>
+{% endif %}

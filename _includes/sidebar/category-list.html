@@ -1,0 +1,21 @@
+<nav class="sidebar-categories" aria-labelledby="sidebar-categories-title">
+  <h4 id="sidebar-categories-title" class="visually-hidden">Categories</h4>
+  {% if site.categories.size > 0 %}
+    {% capture category_rows %}{% for category in site.categories %}{% assign category_name = category[0] %}{% assign category_posts = category[1] %}{{ category_posts.size | prepend: "00000" | slice: -5, 5 }}#{{ category_name }}{% unless forloop.last %}|{% endunless %}{% endfor %}{% endcapture %}
+    {% assign sorted_category_rows = category_rows | split: "|" | sort | reverse %}
+    <ul>
+      {% for row in sorted_category_rows %}
+        {% assign item = row | strip | split: "#" %}
+        {% assign category_name = item[1] %}
+        {% assign category_slug = category_name | slugify %}
+        <li>
+          <a href="{{ '/categories/#' | append: category_slug | relative_url }}">
+            <span>{{ category_name }}</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="sidebar-categories__empty">아직 카테고리가 없습니다.</p>
+  {% endif %}
+</nav>

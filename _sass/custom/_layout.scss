@@ -1,0 +1,78 @@
+html {
+  background: $dominant-color;
+}
+
+body {
+  background: $dominant-color;
+  color: $text-primary-color;
+}
+
+.initial-content,
+.page,
+.archive {
+  background: transparent;
+}
+
+.page,
+.archive {
+  max-width: 1120px;
+}
+
+.page__inner-wrap,
+.archive {
+  padding-inline: 0.75rem;
+}
+
+@media (min-width: 64em) {
+  .page,
+  .archive {
+    width: calc(100% - 140px);
+  }
+
+  .archive {
+    padding-inline-end: 80px;
+  }
+}
+
+@media (min-width: 80em) {
+  .page,
+  .archive {
+    width: calc(100% - 210px);
+  }
+
+  .archive {
+    padding-inline-end: 120px;
+  }
+}
+
+.archive__item {
+  border-bottom: 1px solid rgba($apple-border-color, 0.72);
+  padding: 1.15rem 0 1.25rem;
+}
+
+.archive__item-title {
+  margin-top: 0;
+}
+
+.archive__item-title a,
+.page__content a {
+  color: $accent-color;
+  text-decoration-color: rgba($accent-color, 0.42);
+  text-underline-offset: 0.18em;
+}
+
+.archive__item-title a:hover,
+.page__content a:hover {
+  color: darken($accent-color, 8%);
+  text-decoration-color: currentColor;
+}
+
+.page__meta,
+.archive__item-excerpt,
+.taxonomy__count {
+  color: $text-secondary-color;
+}
+
+.taxonomy__section {
+  margin-bottom: 2.5rem;
+}

@@ -1,7 +1,29 @@
 ---
-# You don't need to edit this file, it's empty on purpose.
-# Edit theme's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-layout: home
+layout: archive
 author_profile: true
 ---
+
+<section class="home-posts" aria-label="Latest posts">
+  {% for post in paginator.posts %}
+    <article class="archive__item">
+      <h3 class="archive__item-title">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h3>
+      <p class="page__meta">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
+        {% if post.categories.size > 0 %}
+          <span aria-hidden="true"> · </span>{{ post.categories | join: ", " }}
+        {% endif %}
+        {% assign words = post.content | number_of_words %}
+        {% assign minutes = words | divided_by: 200 %}
+        {% if minutes < 1 %}
+          {% assign minutes = 1 %}
+        {% endif %}
+        <span aria-hidden="true"> · </span>{{ minutes }} min read
+      </p>
+      <p class="archive__item-excerpt">{{ post.excerpt | strip_html | truncate: 180 }}</p>
+    </article>
+  {% endfor %}
+</section>
+
+{% include paginator.html %}

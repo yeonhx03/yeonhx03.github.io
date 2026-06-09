@@ -1,0 +1,47 @@
+.masthead {
+  background: rgba($dominant-color, 0.86);
+  border-bottom: 1px solid rgba($apple-border-color, 0.75);
+  backdrop-filter: saturate(180%) blur(18px);
+}
+
+.masthead__inner-wrap {
+  max-width: 1180px;
+}
+
+.greedy-nav {
+  background: transparent;
+}
+
+.site-title {
+  color: $text-primary-color;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.site-title:hover {
+  color: $accent-color;
+}
+
+.masthead__menu-item a,
+.search__toggle {
+  color: $text-secondary-color;
+  font-family: $global-font-family;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.masthead__menu-item a:hover,
+.masthead__menu-item a[aria-current="page"],
+.search__toggle:hover {
+  color: $accent-color;
+}
+
+.search__toggle:focus-visible,
+.masthead__menu-item a:focus-visible,
+.site-title:focus-visible,
+.greedy-nav__toggle:focus-visible {
+  outline: 2px solid $accent-color;
+  outline-offset: 4px;
+}

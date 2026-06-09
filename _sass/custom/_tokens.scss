@@ -1,0 +1,19 @@
+$dominant-color: #F7F7F5;
+$secondary-surface-color: #FFFFFF;
+$secondary-muted-color: #E8E8ED;
+$text-primary-color: #1D1D1F;
+$text-secondary-color: #6E6E73;
+$apple-border-color: #D2D2D7;
+$accent-color: #005A60;
+
+$background-color: $dominant-color;
+$text-color: $text-primary-color;
+$muted-text-color: $text-secondary-color;
+$primary-color: $accent-color;
+$link-color: $accent-color;
+$link-color-hover: darken($accent-color, 8%);
+$border-color: $apple-border-color;
+
+$global-font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", "Segoe UI", sans-serif;
+$header-font-family: $global-font-family;
+$caption-font-family: $global-font-family;

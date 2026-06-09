@@ -1,0 +1,25 @@
+{% assign author = site.author %}
+{% assign github_username = site.github_username | default: author.name %}
+
+<div class="author__avatar">
+  {% if author.avatar %}
+    <img src="{{ author.avatar | relative_url }}" alt="{{ author.name | default: site.title }}">
+  {% endif %}
+</div>
+
+<div class="author__content">
+  <h3 class="author__name">{{ author.name | default: site.title }}</h3>
+  <a class="author__github" href="https://github.com/{{ github_username }}" rel="noopener noreferrer">
+    @{{ github_username }}
+  </a>
+</div>
+
+<div class="author__stats" aria-label="블로그 통계">
+  {% include sidebar/visitor-counter.html %}
+  <div class="author__stat">
+    <span>전체 글 수</span>
+    <strong>{{ site.posts | size }}</strong>
+  </div>
+</div>
+
+{% include sidebar/category-list.html %}
