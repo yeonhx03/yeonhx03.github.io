@@ -41,27 +41,11 @@ bundle exec jekyll build
 
 About 페이지 문구는 `_pages/about.md`에서 수정합니다.
 
-## 방문자 counter
-
-기본 방문자 수 표시는 `hits.sh`의 외부 SVG 요청을 사용합니다. 정적 GitHub Pages에서는 서버 측 방문자 수를 직접 계산하지 않습니다.
-
-설정 위치:
-
-```yml
-visitor_counter:
-  enabled: true
-  provider: "hits"
-  target: "yeonhx03.github.io"
-```
-
-다른 provider로 바꾸려면 `_includes/sidebar/visitor-counter.html`에서 provider 분기를 추가하고 `_config.yml`의 `visitor_counter.provider` 값을 변경합니다.
-
 ## 구조
 
 - `_config.yml`: 사이트 기본 정보, remote theme, 플러그인, 기본 post 옵션
 - `_data/navigation.yml`: 상단 네비게이션
 - `_includes/author-profile.html`: 좌측 sidebar 구성
-- `_includes/sidebar/visitor-counter.html`: 방문자 counter adapter
 - `_includes/sidebar/category-list.html`: 자동 category 목록
-- `_includes/masthead.html`: 상단 masthead와 Minimal Mistakes 기본 검색 버튼
 - `_sass/custom/`: Apple 스타일 커스텀 토큰과 UI 스타일
+- `assets/js/custom-search.js`: 검색 입력 이벤트 보강

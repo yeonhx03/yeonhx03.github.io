@@ -1,7 +1,7 @@
 main:
-  - title: "Categories"
+  - title: "Category"
     url: /categories/
-  - title: "Posts"
+  - title: "Post"
     url: /posts/
   - title: "About"
     url: /about/

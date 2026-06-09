@@ -54,23 +54,12 @@
   }
 
   .author__content,
-  .author__stats,
   .sidebar-categories {
     width: 70%;
   }
 
   .author__avatar {
     display: none;
-  }
-
-  .author__stats {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .author__stat {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 0.15rem;
   }
 
   .sidebar-categories ul {
