@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Vinyl record</title>
+  <desc id="desc">A glossy black vinyl record with a green center label and cream music text arranged around the label.</desc>
+  <defs>
+    <radialGradient id="vinyl-sheen" cx="34%" cy="28%" r="68%">
+      <stop offset="0%" stop-color="#3b3b3b"/>
+      <stop offset="27%" stop-color="#191919"/>
+      <stop offset="66%" stop-color="#070707"/>
+      <stop offset="100%" stop-color="#000"/>
+    </radialGradient>
+    <radialGradient id="label-glow" cx="34%" cy="30%" r="72%">
+      <stop offset="0%" stop-color="#68b568"/>
+      <stop offset="58%" stop-color="#449044"/>
+      <stop offset="100%" stop-color="#2b682b"/>
+    </radialGradient>
+    <filter id="plastic-glow" x="-28%" y="-28%" width="156%" height="156%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+      <feOffset dy="2" result="offsetBlur"/>
+      <feColorMatrix in="offsetBlur" type="matrix" values="0 0 0 0 0.08 0 0 0 0 0.12 0 0 0 0 0.08 0 0 0 0.62 0" result="shadow"/>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <path id="music-ring" d="M 80,80 m -21,0 a 21,21 0 1,1 42,0 a 21,21 0 1,1 -42,0"/>
+  </defs>
+  <circle cx="80" cy="80" r="72" fill="#050505" filter="url(#plastic-glow)"/>
+  <circle cx="80" cy="80" r="68" fill="url(#vinyl-sheen)"/>
+  <circle cx="80" cy="80" r="60" fill="none" stroke="#222" stroke-width="1.1"/>
+  <circle cx="80" cy="80" r="53" fill="none" stroke="#111" stroke-width="1"/>
+  <circle cx="80" cy="80" r="45" fill="none" stroke="#262626" stroke-width="0.9"/>
+  <circle cx="80" cy="80" r="37" fill="none" stroke="#101010" stroke-width="0.9"/>
+  <path d="M 35 31 C 54 18, 82 13, 106 21" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity="0.09"/>
+  <path d="M 45 36 C 61 27, 83 24, 101 29" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.18"/>
+  <circle cx="80" cy="80" r="28" fill="url(#label-glow)"/>
+  <circle cx="80" cy="80" r="23" fill="none" stroke="#fff3cd" stroke-width="0.8" opacity="0.38"/>
+  <text fill="#fff3cd" font-family="Arial, Helvetica, sans-serif" font-size="7.4" font-weight="700" letter-spacing="1.2">
+    <textPath href="#music-ring" startOffset="1%">music</textPath>
+    <textPath href="#music-ring" startOffset="26%">music</textPath>
+    <textPath href="#music-ring" startOffset="51%">music</textPath>
+    <textPath href="#music-ring" startOffset="76%">music</textPath>
+  </text>
+  <circle cx="80" cy="80" r="5.5" fill="#fff3cd"/>
+  <circle cx="80" cy="80" r="2.1" fill="#161616"/>
+</svg>

@@ -25,43 +25,25 @@
     padding: 0;
     border: 0;
     background: transparent;
+    box-shadow: none;
     cursor: pointer;
+    outline: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.vinyl-player__button:focus,
+.vinyl-player__button:focus-visible{
+    box-shadow: none;
+    outline: 0;
 }
 
 .vinyl-player__record{
-    position: relative;
     display: block;
     width: 5rem;
     height: 5rem;
     border-radius: 50%;
-    background: repeating-radial-gradient(
-        circle,
-        #191919 0,
-        #191919 3px,
-        #2a2a2a 4px,
-        #2a2a2a 5px
-    );
-}
-
-.vinyl-player__label,
-.vinyl-player__hole {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.vinyl-player__label {
-  width: 1.8rem;
-  height: 1.8rem;
-  background: #449044;
-}
-
-.vinyl-player__hole {
-  width: 0.35rem;
-  height: 0.35rem;
-  background: #f7f5f2;
+    filter: drop-shadow(0 0 0.45rem rgba(68, 144, 68, 0.22));
+    user-select: none;
 }
 
 .vinyl-player__button.is-playing .vinyl-player__record {
