@@ -1,21 +1,62 @@
 <nav class="sidebar-categories" aria-labelledby="sidebar-categories-title">
   <h4 id="sidebar-categories-title" class="visually-hidden">Categories</h4>
   {% if site.categories.size > 0 %}
-    {% capture category_rows %}{% for category in site.categories %}{% assign category_name = category[0] %}{% assign category_posts = category[1] %}{{ category_posts.size | prepend: "00000" | slice: -5, 5 }}#{{ category_name }}{% unless forloop.last %}|{% endunless %}{% endfor %}{% endcapture %}
-    {% assign sorted_category_rows = category_rows | split: "|" | sort | reverse %}
-    <ul>
-      {% for row in sorted_category_rows %}
-        {% assign item = row | strip | split: "#" %}
-        {% assign category_name = item[1] %}
-        {% assign category_slug = category_name | slugify %}
-        <li>
-          <a href="{{ '/categories/#' | append: category_slug | relative_url }}">
-            <span>{{ category_name }}</span>
-            <strong>{{ item[0] | plus: 0 }}</strong>
-          </a>
-        </li>
+    {% assign grouped_categories = "" %}
+    {% if site.data.sidebar_categories %}
+      {% for group in site.data.sidebar_categories %}
+        {% assign visible_category_count = 0 %}
+        {% capture group_items %}
+          {% for category_name in group.categories %}
+            {% assign category_posts = site.categories[category_name] %}
+            {% if category_posts.size > 0 %}
+              {% assign visible_category_count = visible_category_count | plus: 1 %}
+              {% assign grouped_categories = grouped_categories | append: "|" | append: category_name | append: "|" %}
+              {% assign category_slug = category_name | slugify %}
+              <li>
+                <a href="{{ '/categories/#' | append: category_slug | relative_url }}">
+                  <span>{{ category_name }}</span>
+                  <strong>{{ category_posts.size }}</strong>
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        {% endcapture %}
+        {% if visible_category_count > 0 %}
+          <section class="sidebar-categories__group">
+            <h5>{{ group.title }}</h5>
+            <ul>
+              {{ group_items }}
+            </ul>
+          </section>
+        {% endif %}
       {% endfor %}
-    </ul>
+    {% endif %}
+
+    {% capture uncategorized_items %}
+      {% for category in site.categories %}
+        {% assign category_name = category[0] %}
+        {% assign grouped_category_token = "|" | append: category_name | append: "|" %}
+        {% unless grouped_categories contains grouped_category_token %}
+          {% assign category_posts = category[1] %}
+          {% assign category_slug = category_name | slugify %}
+          <li>
+            <a href="{{ '/categories/#' | append: category_slug | relative_url }}">
+              <span>{{ category_name }}</span>
+              <strong>{{ category_posts.size }}</strong>
+            </a>
+          </li>
+        {% endunless %}
+      {% endfor %}
+    {% endcapture %}
+    {% assign uncategorized_items_clean = uncategorized_items | strip %}
+    {% if uncategorized_items_clean != "" %}
+      <section class="sidebar-categories__group">
+        <h5>Other</h5>
+        <ul>
+          {{ uncategorized_items }}
+        </ul>
+      </section>
+    {% endif %}
   {% else %}
     <p class="sidebar-categories__empty">아직 카테고리가 없습니다.</p>
   {% endif %}

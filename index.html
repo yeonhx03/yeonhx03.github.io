@@ -14,12 +14,6 @@ author_profile: true
         {% if post.categories.size > 0 %}
           <span aria-hidden="true"> · </span>{{ post.categories | join: ", " }}
         {% endif %}
-        {% assign words = post.content | number_of_words %}
-        {% assign minutes = words | divided_by: 200 %}
-        {% if minutes < 1 %}
-          {% assign minutes = 1 %}
-        {% endif %}
-        <span aria-hidden="true"> · </span>{{ minutes }} min read
       </p>
       <p class="archive__item-excerpt">{{ post.excerpt | strip_html | truncate: 180 }}</p>
     </article>

@@ -45,7 +45,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-      read_time: true
+      read_time: false
       show_date: true
       share: false
       related: false

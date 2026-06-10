@@ -1,6 +1,6 @@
 .sidebar {
   opacity: 1;
-  text-align: center;
+  text-align: left;
 }
 
 @media (min-width: 64em) {
@@ -16,53 +16,60 @@
 }
 
 .author__avatar,
-.author__content,
 .sidebar-categories {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
 }
 
+.author__avatar a {
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.author__avatar a:focus-visible {
+  outline: 2px solid $accent-color;
+  outline-offset: 4px;
+}
+
 .author__avatar img {
   border: 1px solid rgba($apple-border-color, 0.8);
   border-radius: 50%;
   box-shadow: none;
+  display: block;
   max-width: 88px;
 }
 
-.author__content {
-  margin-bottom: 1.2rem;
+.sidebar-categories {
+  margin-top: 1.4rem;
 }
 
-.author__name {
-  color: $text-primary-color;
-  font-size: 1rem;
-  letter-spacing: -0.01em;
-  margin-bottom: 0.15rem;
-}
-
-.author__github {
-  color: $text-secondary-color;
-  font-size: 0.86rem;
-  text-decoration: none;
-}
-
-.author__github:hover {
-  color: $accent-color;
-}
-
-.sidebar-categories h4 {
+.sidebar-categories h4,
+.sidebar-categories h5 {
   margin: 0;
+}
+
+.sidebar-categories__group + .sidebar-categories__group {
+  margin-top: 1.05rem;
+}
+
+.sidebar-categories h5 {
+  color: $text-primary-color;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.45rem;
 }
 
 .sidebar-categories ul {
+  border-left: 2px solid rgba($accent-color, 0.18);
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 0 0 1.05rem;
 }
 
 .sidebar-categories li + li {
-  margin-top: 0.2rem;
+  margin-top: 0.18rem;
 }
 
 .sidebar-categories a {
@@ -70,10 +77,10 @@
   border-radius: 6px;
   color: $text-secondary-color;
   display: flex;
-  font-size: 0.84rem;
-  gap: 0.5rem;
-  justify-content: center;
-  padding: 0.34rem 0;
+  font-size: 0.82rem;
+  gap: 0.28rem;
+  justify-content: flex-start;
+  padding: 0.2rem 0.35rem;
   text-decoration: none;
 }
 

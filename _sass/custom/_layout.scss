@@ -51,7 +51,7 @@ body {
 }
 
 .archive__item-title {
-  margin-top: 0;
+  margin: 0 0 0.25rem;
 }
 
 .archive__item-title a,
@@ -61,10 +61,32 @@ body {
   text-underline-offset: 0.18em;
 }
 
+.archive__item-title a {
+  text-decoration: none;
+}
+
 .archive__item-title a:hover,
 .page__content a:hover {
   color: darken($accent-color, 8%);
   text-decoration-color: currentColor;
+}
+
+.archive__item-title a:hover {
+  text-decoration: none;
+}
+
+.archive__item .page__meta,
+.page__inner-wrap > header .page__meta {
+  margin-top: 0;
+}
+
+.page__inner-wrap > header .page__title {
+  margin-bottom: 0.25rem;
+}
+
+.page__meta-readtime,
+.page__meta-sep {
+  display: none;
 }
 
 .page__meta,
