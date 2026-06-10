@@ -23,6 +23,15 @@ body {
   padding-inline: 0.75rem;
 }
 
+.right-sidebar {
+  text-align: center;
+}
+
+.right-sidebar > * {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media (min-width: 64em) {
   .page {
     width: calc(100% - 175px);
@@ -64,7 +73,10 @@ body {
   }
 
   .right-sidebar {
+    align-items: center;
     color: $text-secondary-color;
+    display: flex;
+    flex-direction: column;
     font-size: 0.84rem;
   }
 

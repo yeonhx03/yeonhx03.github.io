@@ -16,4 +16,20 @@
             draggable="false"
         >
     </button>
+    <label class="vinyl-player__volume" for="vinyl-player-volume">
+        <span class="visually-hidden">볼륨</span>
+        <input
+            class="vinyl-player__volume-control"
+            id="vinyl-player-volume"
+            type="range"
+            min="0"
+            max="100"
+            value="70"
+            aria-label="볼륨"
+            aria-valuetext="70%"
+        >
+        <span class="vinyl-player__volume-knob" aria-hidden="true">
+            <span class="vinyl-player__volume-indicator"></span>
+        </span>
+    </label>
 </div>
