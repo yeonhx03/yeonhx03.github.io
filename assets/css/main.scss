@@ -56,11 +56,54 @@
 
 .vinyl-player__volume{
     cursor: pointer;
+    align-items: center;
     display: grid;
-    height: 1.5rem;
+    gap: 0.22rem;
+    grid-template-columns: 0.8rem 4.6rem 1.05rem;
+    height: 1.1rem;
+    position: relative;
+    width: 6.9rem;
+}
+
+.vinyl-player__volume-icon{
+    color: #4a4a4a;
+    display: grid;
+    height: 1rem;
+    place-items: center;
+}
+
+.vinyl-player__volume-icon svg{
+    display: block;
+    fill: currentColor;
+    height: 1rem;
+    overflow: visible;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.75;
+    width: 1rem;
+}
+
+.vinyl-player__volume-icon path:first-child{
+    stroke-width: 0;
+}
+
+.vinyl-player__volume-icon--low svg{
+    height: 0.92rem;
+    width: 0.92rem;
+}
+
+.vinyl-player__volume-icon--high svg{
+    height: 1.05rem;
+    width: 1.05rem;
+}
+
+.vinyl-player__volume-track{
+    display: grid;
+    height: 1.1rem;
     place-items: center;
     position: relative;
-    width: 5.75rem;
+    width: 100%;
 }
 
 .vinyl-player__volume-control{
@@ -75,55 +118,25 @@
 }
 
 .vinyl-player__volume-bar{
-    background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.16), transparent),
-        #111;
-    border: 1px solid rgba(68, 144, 68, 0.38);
+    background: #5a5a5a;
     border-radius: 999px;
-    box-shadow:
-        inset 0 0.08rem 0.16rem rgba(255, 255, 255, 0.12),
-        inset 0 -0.14rem 0.26rem rgba(0, 0, 0, 0.68),
-        0 0 0.42rem rgba(68, 144, 68, 0.16);
     display: block;
-    height: 0.58rem;
+    height: 0.18rem;
     overflow: visible;
     position: relative;
     width: 100%;
 }
 
 .vinyl-player__volume-fill{
-    background: linear-gradient(90deg, #2f7230, #449044);
+    background: #2e2e2e;
     border-radius: 999px;
-    box-shadow: 0 0 0.38rem rgba(68, 144, 68, 0.32);
     display: block;
     height: 100%;
     width: var(--volume-level);
 }
 
-.vinyl-player__volume-thumb{
-    background:
-        radial-gradient(circle at 35% 28%, rgba(255, 255, 255, 0.48), transparent 28%),
-        radial-gradient(circle at 50% 56%, #fff3cd 0, #e5d8ae 52%, #8b7c56 100%);
-    border: 1px solid rgba(255, 243, 205, 0.72);
-    border-radius: 50%;
-    box-shadow:
-        0 0.08rem 0.22rem rgba(0, 0, 0, 0.32),
-        0 0 0.35rem rgba(68, 144, 68, 0.2);
-    display: block;
-    height: 0.95rem;
-    left: var(--volume-level);
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 0.95rem;
-}
-
 .vinyl-player__volume-control:focus-visible + .vinyl-player__volume-bar{
-    box-shadow:
-        inset 0 0.08rem 0.16rem rgba(255, 255, 255, 0.12),
-        inset 0 -0.14rem 0.26rem rgba(0, 0, 0, 0.68),
-        0 0 0 2px rgba(68, 144, 68, 0.5),
-        0 0 0.52rem rgba(68, 144, 68, 0.24);
+    box-shadow: 0 0 0 2px rgba(40, 40, 40, 0.36);
 }
 
 @keyframes vinyl-spin {

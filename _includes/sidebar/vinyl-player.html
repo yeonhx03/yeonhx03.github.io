@@ -18,19 +18,32 @@
     </button>
     <label class="vinyl-player__volume" for="vinyl-player-volume">
         <span class="visually-hidden">볼륨</span>
-        <input
-            class="vinyl-player__volume-control"
-            id="vinyl-player-volume"
-            type="range"
-            min="0"
-            max="100"
-            value="70"
-            aria-label="볼륨"
-            aria-valuetext="70%"
-        >
-        <span class="vinyl-player__volume-bar" aria-hidden="true">
-            <span class="vinyl-player__volume-fill"></span>
-            <span class="vinyl-player__volume-thumb"></span>
+        <span class="vinyl-player__volume-icon vinyl-player__volume-icon--low" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M4 9v6h4l5 4V5L8 9H4z"></path>
+            </svg>
+        </span>
+        <span class="vinyl-player__volume-track">
+            <input
+                class="vinyl-player__volume-control"
+                id="vinyl-player-volume"
+                type="range"
+                min="0"
+                max="100"
+                value="70"
+                aria-label="볼륨"
+                aria-valuetext="70%"
+            >
+            <span class="vinyl-player__volume-bar" aria-hidden="true">
+                <span class="vinyl-player__volume-fill"></span>
+            </span>
+        </span>
+        <span class="vinyl-player__volume-icon vinyl-player__volume-icon--high" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M3 9v6h4l5 4V5L7 9H3z"></path>
+                <path d="M16 8.5a5 5 0 0 1 0 7"></path>
+                <path d="M18.8 5.7a9 9 0 0 1 0 12.6"></path>
+            </svg>
         </span>
     </label>
 </div>
