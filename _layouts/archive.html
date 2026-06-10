@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<div id="main" class="layout-with-right-sidebar" role="main">
+  {% include sidebar.html %}
+
+  <div class="archive">
+    {% unless page.header.overlay_color or page.header.overlay_image %}
+      <h1 id="page-title" class="page__title">{{ page.title }}</h1>
+    {% endunless %}
+
+    {{ content }}
+  </div>
+
+  <aside class="right-sidebar sticky" aria-label="Sidebar">
+    {% include sidebar/right-sidebar.html %}
+  </aside>
+</div>

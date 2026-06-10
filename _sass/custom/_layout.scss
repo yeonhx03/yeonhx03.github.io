@@ -24,24 +24,62 @@ body {
 }
 
 @media (min-width: 64em) {
-  .page,
-  .archive {
-    width: calc(100% - 140px);
+  .page {
+    width: calc(100% - 175px);
   }
 
   .archive {
-    padding-inline-end: 80px;
+    width: calc(100% - 350px);
   }
 }
 
 @media (min-width: 80em) {
-  .page,
-  .archive {
-    width: calc(100% - 210px);
+  .page {
+    width: calc(100% - 263px);
   }
 
   .archive {
-    padding-inline-end: 120px;
+    width: calc(100% - 526px);
+  }
+}
+
+@media (min-width: 64em) {
+  #main.layout-with-right-sidebar {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 175px minmax(0, 1fr) 175px;
+  }
+
+  .layout-with-right-sidebar .sidebar,
+  .layout-with-right-sidebar .archive,
+  .layout-with-right-sidebar .right-sidebar {
+    float: none;
+    min-width: 0;
+    padding-inline: 0;
+    width: auto;
+  }
+
+  .layout-with-right-sidebar .archive {
+    margin-top: 0;
+  }
+
+  .right-sidebar {
+    color: $text-secondary-color;
+    font-size: 0.84rem;
+  }
+
+  .right-sidebar.sticky {
+    align-self: start;
+    max-height: calc(100vh - 2em - 2em);
+    overflow-y: auto;
+    position: sticky;
+    top: 2em;
+  }
+}
+
+@media (min-width: 80em) {
+  #main.layout-with-right-sidebar {
+    grid-template-columns: 263px minmax(0, 1fr) 263px;
   }
 }
 
