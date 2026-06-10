@@ -118,7 +118,7 @@
 }
 
 .vinyl-player__volume-bar{
-    background: #5a5a5a;
+    background: #707070;
     border-radius: 999px;
     display: block;
     height: 0.18rem;
@@ -137,6 +137,30 @@
 
 .vinyl-player__volume-control:focus-visible + .vinyl-player__volume-bar{
     box-shadow: 0 0 0 2px rgba(40, 40, 40, 0.36);
+}
+
+.vinyl-player__views{
+    align-items: center;
+    color: #4a4a4a;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    line-height: 1.1;
+    margin-top: 0.1rem;
+    text-align: center;
+}
+
+.vinyl-player__views-label{
+    font-size: 0.56rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.vinyl-player__views-count{
+    color: #2e2e2e;
+    font-size: 0.72rem;
+    font-weight: 700;
 }
 
 @keyframes vinyl-spin {
