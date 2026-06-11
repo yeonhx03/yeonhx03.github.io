@@ -53,3 +53,17 @@
   outline: 2px solid $accent-color;
   outline-offset: 4px;
 }
+
+@media (min-width: 64em) {
+  .search-content.is--visible .right-sidebar--search {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.84rem;
+    inset-inline-end: max(1rem, calc((100vw - 1280px) / 2 + 1.4rem));
+    position: fixed;
+    top: 5.2rem;
+    width: 263px;
+    z-index: 20;
+  }
+}
