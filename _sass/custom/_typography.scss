@@ -70,3 +70,95 @@
 .page__content img {
   border-radius: 8px;
 }
+
+.about-profile {
+  align-items: center;
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: minmax(5.8rem, 7rem) minmax(0, 1fr);
+  margin-bottom: 2.5rem;
+}
+
+.about-profile__image {
+  aspect-ratio: 1;
+  border: 1px solid rgba($apple-border-color, 0.8);
+  border-radius: 18px;
+  display: block;
+  object-fit: cover;
+  width: 100%;
+}
+
+.about-profile__body h2 {
+  margin: 0 0 0.45rem;
+}
+
+.about-profile__body p {
+  color: $text-secondary-color;
+  margin: 0 0 0.8rem;
+}
+
+.about-profile__links {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.about-profile__link {
+  align-items: center;
+  border: 1px solid rgba($apple-border-color, 0.9);
+  border-radius: 999px;
+  color: $text-primary-color !important;
+  display: inline-flex;
+  height: 2rem;
+  justify-content: center;
+  text-decoration: none;
+  width: 2rem;
+}
+
+.about-profile__link:hover,
+.about-profile__link:focus-visible {
+  border-color: rgba($accent-color, 0.55);
+  color: $accent-color !important;
+}
+
+.about-profile__link--placeholder {
+  opacity: 0.58;
+}
+
+.about-timeline {
+  border-left: 2px solid rgba($accent-color, 0.16);
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+
+.about-timeline__item {
+  display: grid;
+  gap: 0.45rem 1rem;
+  grid-template-columns: minmax(5.5rem, 7rem) minmax(0, 1fr);
+}
+
+.about-timeline__period {
+  color: $text-secondary-color;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.about-timeline h3 {
+  font-size: 1rem;
+  margin: 0 0 0.2rem;
+}
+
+.about-timeline p {
+  color: $text-secondary-color;
+  margin: 0;
+}
+
+@media (max-width: 48em) {
+  .about-profile,
+  .about-timeline__item {
+    grid-template-columns: 1fr;
+  }
+
+  .about-profile__image {
+    max-width: 7rem;
+  }
+}
