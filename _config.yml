@@ -66,5 +66,6 @@ tag_archive:
   type: liquid
   path: /tags/
 
-after_footer_scripts:
-  - /assets/js/vinyl-player.js
+# Music player script is paused until a better playback approach is chosen.
+after_footer_scripts: []
+# Re-enable by adding the music player script here.
