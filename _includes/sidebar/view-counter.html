@@ -1,0 +1,23 @@
+<div class="sidebar-views" aria-label="Total views">
+  <span class="sidebar-views__label">Total views</span>
+  <strong
+    class="sidebar-views__count"
+    data-goatcounter-code="{{ site.github_username }}"
+  >--</strong>
+</div>
+
+{% if site.github_username %}
+  <a
+    class="sidebar-github-grass"
+    href="https://github.com/{{ site.github_username }}"
+    aria-label="{{ site.github_username }} GitHub contributions"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <img
+      src="https://ghchart.rshah.org/449044/{{ site.github_username }}"
+      alt="{{ site.github_username }} GitHub contribution graph"
+      loading="lazy"
+    >
+  </a>
+{% endif %}

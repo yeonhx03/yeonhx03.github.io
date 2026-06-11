@@ -22,6 +22,15 @@
 {% include analytics.html %}
 {% include /comments-providers/scripts.html locale=locale %}
 
+{% if site.github_username %}
+  <script
+    data-goatcounter="https://{{ site.github_username }}.goatcounter.com/count"
+    async
+    src="//gc.zgo.at/count.js"
+  ></script>
+  <script src="{{ '/assets/js/view-counter.js' | relative_url }}"></script>
+{% endif %}
+
 {% comment %}
 after_footer_scripts is paused while the music player is disabled.
 {% endcomment %}
