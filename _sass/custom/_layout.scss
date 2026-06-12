@@ -83,7 +83,7 @@ body {
   }
 
   .right-sidebar {
-    align-items: flex-end;
+    align-items: center;
     color: $text-secondary-color;
     display: flex;
     flex-direction: column;
@@ -93,13 +93,13 @@ body {
 
   .right-sidebar > * {
     margin-left: auto;
-    margin-right: 0;
+    margin-right: auto;
   }
 
   .right-sidebar__toc {
-    margin-top: 1.1rem;
+    margin-top: 1rem;
     text-align: left;
-    width: 7.7rem;
+    width: 190px;
   }
 
   .right-sidebar__toc .toc__menu {
