@@ -5,8 +5,8 @@ categories:
   - Linear Algebra
 tags:
   - "Linear Algebra"
-  - "Lay"
   - "Linear System"
+  - "Lay"
 math: true
 ---
 ## 1. 선형방정식계
