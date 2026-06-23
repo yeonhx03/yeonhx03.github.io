@@ -8,6 +8,7 @@ tags:
   - "Linear System"
   - "Lay"
 math: true
+mathjax: true
 ---
 ## 1. 선형방정식계
 선형방정식계는 선형대수학이 다루는 핵심 대상이다. 아래에서 자세히 알아보자.<br>
