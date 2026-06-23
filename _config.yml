@@ -52,6 +52,7 @@ defaults:
       toc: true
       toc_sticky: true
       comments: false
+      mathjax: true
   - scope:
       path: "_pages"
       type: pages
