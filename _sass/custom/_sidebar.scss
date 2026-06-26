@@ -144,20 +144,42 @@
   margin-top: 0.7rem;
   max-width: 190px;
   opacity: 0.82;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 0.2rem;
+  scrollbar-color: rgba($accent-color, 0.38) transparent;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
   width: 100%;
 }
 
-.sidebar-github-grass:focus-visible {
+.sidebar-github-grass::-webkit-scrollbar {
+  height: 4px;
+}
+
+.sidebar-github-grass::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-github-grass::-webkit-scrollbar-thumb {
+  background: rgba($accent-color, 0.38);
+  border-radius: 999px;
+}
+
+.sidebar-github-grass__link {
+  display: block;
+  width: max-content;
+}
+
+.sidebar-github-grass__link:focus-visible {
   border-radius: 4px;
   outline: 2px solid $accent-color;
   outline-offset: 4px;
 }
 
-.sidebar-github-grass img {
+.sidebar-github-grass__link img {
   display: block;
   height: auto;
-  margin-left: auto;
   max-width: none;
   width: 520px;
 }

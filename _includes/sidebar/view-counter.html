@@ -7,17 +7,19 @@
 </div>
 
 {% if site.github_username %}
-  <a
-    class="sidebar-github-grass"
-    href="https://github.com/{{ site.github_username }}"
-    aria-label="{{ site.github_username }} GitHub contributions"
-    rel="noopener noreferrer"
-    target="_blank"
-  >
-    <img
-      src="https://ghchart.rshah.org/449044/{{ site.github_username }}"
-      alt="{{ site.github_username }} GitHub contribution graph"
-      loading="lazy"
+  <div class="sidebar-github-grass">
+    <a
+      class="sidebar-github-grass__link"
+      href="https://github.com/{{ site.github_username }}"
+      aria-label="{{ site.github_username }} GitHub contributions"
+      rel="noopener noreferrer"
+      target="_blank"
     >
-  </a>
+      <img
+        src="https://ghchart.rshah.org/449044/{{ site.github_username }}"
+        alt="{{ site.github_username }} GitHub contribution graph"
+        loading="lazy"
+      >
+    </a>
+  </div>
 {% endif %}
