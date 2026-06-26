@@ -147,10 +147,16 @@
   overflow-x: auto;
   overflow-y: hidden;
   padding-bottom: 0.2rem;
+  cursor: grab;
   scrollbar-color: rgba($accent-color, 0.38) transparent;
   scrollbar-width: thin;
+  touch-action: pan-x;
   -webkit-overflow-scrolling: touch;
   width: 100%;
+}
+
+.sidebar-github-grass.is-dragging {
+  cursor: grabbing;
 }
 
 .sidebar-github-grass::-webkit-scrollbar {
@@ -168,6 +174,7 @@
 
 .sidebar-github-grass__link {
   display: block;
+  user-select: none;
   width: max-content;
 }
 
@@ -181,5 +188,6 @@
   display: block;
   height: auto;
   max-width: none;
+  pointer-events: none;
   width: 520px;
 }
