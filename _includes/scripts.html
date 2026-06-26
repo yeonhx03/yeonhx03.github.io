@@ -22,6 +22,22 @@
 {% include analytics.html %}
 {% include /comments-providers/scripts.html locale=locale %}
 
+{% if page.mathjax or page.math %}
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+{% endif %}
+
 {% if site.github_username %}
   <script
     data-goatcounter="https://{{ site.github_username }}.goatcounter.com/count"
