@@ -6,7 +6,6 @@ categories:
 tags:
   - "Linear Algebra"
   - "Linear System"
-  - "Lay"
 math: true
 mathjax: true
 ---
@@ -52,3 +51,8 @@ $$
 
 위와 같이 실수에서 동치관계를 정의하면, 이때의 동치는 그냥 상등이다.  
 보통 수학에서는 '동치'라고 할 때는 상등보다는 느슨한 관계를 말하는 경우가 많다.
+
+## References
+이 post는 아래 교재로 공부한 내용을 정리한 것임을 알립니다.
+- David C. Lay, Steven R. Lay, Judi J. McDonald, *Linear Algebra and Its Applications*, 6th ed., Pearson.
+- 이인석, 『선형대수와 군』, 개정판.

@@ -1,0 +1,118 @@
+---
+title: "선형계 풀이"
+date: 2026-06-24
+categories:
+  - Linear Algebra
+tags:
+  - "Linear Algebra"
+  - "Linear System"
+math: true
+mathjax: true
+---
+## 1. 선형계의 풀이
+선형계 풀이의 기본은 하나의 선형계를 풀기 쉬운 형태의 동치인 선형계로 바꾸는 것이다.  
+
+선형계를 풀기 전에 필요한 기본적인 개념들을 알아보자.<br><br>
+
+### 1.1. 행렬표기법
+선형계는 행렬을 통해 간단하게 표현할 수 있다. 다음과 같은 선형계를 생각하자.  
+$$
+\begin{array}{rrrr}
+a_{11}x_1 &+& a_{12}x_2 &+& a_{13}x_3 &=\quad b_1
+\\ a_{21}x_1 &+&  &+& a_{23}x_3 &= \quad b_2
+\end{array}
+$$
+여기서 계수를 다음과 같이 정리한 행렬을 **계수행렬(coefficient matrix)** 이라 한다.
+$$
+\begin{bmatrix}
+a_{11} & a_{12} & a_{13}
+\\
+a_{21} & 0 & a_{23}
+\end{bmatrix}
+$$
+그리고 마지막 열에 선형계 우변의 상수들을 추가한 것을 **첨가행렬(augmented matrix)** 이라 한다.
+$$
+\left[\begin{array}{ccc|c}a_{11} & a_{12} & a_{13} & b_1 \\a_{21} & 0      & a_{23} & b_2\end{array}\right]
+$$
+계수행렬 좌측에 |를 넣는데, 안넣는 교재도 있다.
+<br><br>
+
+### 1.2. 기본 행 연산
+선형계를 푼다는 것은, 결국 연립방정식을 푸는 것과 같다. 연립방정식을 풀 때를 떠올려보자.
+
+변수를 소거하기 위해 하나의 방정식에 상수를 곱하고, 이를 다른 방정식에 더하는 방식으로 풀었다. 행렬도 이런 과정으로 풀 수 있다.
+
+글의 도입부에서 선형계 풀이의 기본은 **동치**인 다른 선형계로 바꾸는 것이라 했다.
+
+**기본 행 연산(elementary row operation)** 은 동치인 선형계로 바꾸기 위한 기본적인 행렬의 연산이다.
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; background-color: #f6f8fa; margin: 16px 0;">
+
+<strong>기본 행 연산</strong>
+
+<ul>
+  <li>하나의 행을 그 행에 다른 행의 상수배를 더한 것으로 교체한다.</li>
+  <li>두 행을 서로 교환한다.</li>
+  <li>하나의 행에 포함된 모든 성분에 0이 아닌 상수를 곱한다.</li>
+</ul>
+
+</div>
+
+읽어보면 연립방정식 풀이랑 유사하다는 것을 알 수 있다.
+
+기본 행 연산은 모든 행렬에 적용할 수 있다.<br><br>
+
+#### 1.2.1. 기본 행 연산의 가역성
+기본 행 연산은 가역적인 연산이다. 즉, 그 결과를 다시 원래 상태로 되돌리는 역연산이 존재한다.
+어떤 연산의 가역성을 보이려면, 그 연산을 적용한 뒤의 결과를 원래 상태로 되돌릴 수 있는 역연산을 제시하면 된다. 기본 행 연산의 경우, 각 연산은 다음과 같은 방식으로 되돌릴 수 있다.
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; background-color: #f6f8fa; margin: 16px 0;">
+<ul>
+<li>1행에 2행의 $c$배를 더했다면, 다시 1행에 2행의 $-c$배를 더해 원래 행으로 만들 수 있다.</li>
+<li>두 행을 바꾼 것은 다시 두 행을 바꾸어 원래로 돌릴 수 있다.</li>
+<li>한 행에 $0$이 아닌 상수 $c$를 곱했다면, 다시 $1/c$를 곱해 원래 행으로 만들 수 있다.</li>
+</ul>
+</div>
+따라서 기본 행 연산은 가역적이다.  
+
+**가역성** 에 관한 자세한 내용은 [역함수]()에 정리해놓았으니 참고하자.
+<br><br>
+
+### 1.2.2. 기본 행 연산은 해 집합을 보존한다.
+기본 행 연산을 통해 얻은 행렬과 기존 행렬을 **행 동치(row equivalent)** 관계라 한다.
+기본 행 연산을 선형계의 첨가행렬에 시행한다 했을 때, 기본 행 연산은 해 집합을 보존한다.
+
+<br><br>
+
+### 1.3. 사다리꼴
+**nonzero row, nonzero column** 은 적어도 하나의 0이 아닌 성분을 포함하는 행 또는 열이다. 
+
+당연히 **zero row, zero column** 은 모든 성분이 0인 행 또는 열이다.
+
+**선행성분(leading entry)** 은 nonzero row에서 가장 왼쪽의 $0$이 아닌 성분을 의미한다. 
+
+행렬 $R$이 다음 3가지 조건을 만족시키면, 행렬 $R$을 **행사다리꼴(Row Echelon Form)** 이라 한다. 
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; background-color: #f6f8fa; margin: 16px 0;">
+<ul>
+<li> Nonzero row는 항상 모든 zero row보다 위에 있다.</li>
+<li> 행의 선행성분은 그 행보다 위에 있는 행의 선행성분보다 항상 오른쪽에 위치한다. </li>
+<li> 열의 성분 중 선행성분보다 아래 있는 것은 모두 0이다. </li>
+</ul>
+</div>
+앞으로 행사다리꼴을 간단하게 $REF$ 라 하자. 아래는 $REF$의 예시이다.
+![REF 예시](/assets/images/REF_example.png)
+
+$REF$ 중 아래 2가지 조건을 추가로 만족할 경우 **기약행사다리꼴(Reduced Row Echelon Form)** 이라 한다.
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; background-color: #f6f8fa; margin: 16px 0;">
+<ul>
+<li> 선행성분은 항상 $1$이다.</li>
+<li> 선행성분 $1$은 항상 그 열에서 유일한 $0$이 아닌 성분이다. 즉, 선행성분인 $1$ 위 아래로는 $0$만 존재해야 한다. </li>
+</ul>
+</div>
+앞으로 이러한 행렬을 $RREF$라 하자. 아래는 $RREF$의 예시이다.
+![RREF 예시](/assets/images/RREF_example.png)
+<br><br>
+
+## 2. 가우스 소거법
+**가우스 소거법(Gaussian elimination)** 이란 기본 행 연산을 여러번 사용해 행렬을 $REF$로 만드는 과정이다. (Lay 교재에서는 행 축약 알고리즘 중 foward phase에 해당한다.)
+
