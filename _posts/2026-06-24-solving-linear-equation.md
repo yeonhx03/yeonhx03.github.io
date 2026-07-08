@@ -15,7 +15,8 @@ mathjax: true
 선형계를 풀기 전에 필요한 기본적인 개념들을 알아보자.<br><br>
 
 ### 1.1. 행렬표기법
-선형계는 행렬을 통해 간단하게 표현할 수 있다. 다음과 같은 선형계를 생각하자.  
+선형계는 행렬을 통해 간단하게 표현할 수 있다. 다음과 같은 선형계를 생각하자.
+
 $$
 \begin{array}{rrrr}
 a_{11}x_1 &+& a_{12}x_2 &+& a_{13}x_3 &=\quad b_1
@@ -39,7 +40,7 @@ $$
 \left[\begin{array}{ccc|c}a_{11} & a_{12} & a_{13} & b_1 \\a_{21} & 0      & a_{23} & b_2\end{array}\right]
 $$
 
-계수행렬 좌측에 |를 넣는데, 안넣는 교재도 있다.
+첨가행렬을 만들 때 계수행렬 우측에 |를 넣는데, 안넣는 교재도 있다.
 <br><br>
 
 ### 1.2. 기본 행 연산
@@ -83,7 +84,7 @@ $$
 **가역성** 에 관한 자세한 내용은 [역함수]()에 정리해놓았으니 참고하자.
 <br><br>
 
-### 1.2.2. 기본 행 연산은 해 집합을 보존한다.
+#### 1.2.2. 기본 행 연산은 해 집합을 보존한다.
 기본 행 연산을 통해 얻은 행렬과 기존 행렬을 **행 동치(row equivalent)** 관계라 한다.
 기본 행 연산을 선형계의 첨가행렬에 시행한다 했을 때, 기본 행 연산은 해 집합을 보존한다.
 
@@ -107,8 +108,9 @@ $$
 </div>
 
 앞으로 행사다리꼴을 간단하게 $REF$ 라 하자. 아래는 $REF$의 예시이다.
-![REF 예시](/assets/images/REF_example.png)
 
+![REF 예시](/assets/images/REF_example.png)
+<br>
 $REF$ 중 아래 2가지 조건을 추가로 만족할 경우 **기약행사다리꼴(Reduced Row Echelon Form)** 이라 한다.
 <div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; background-color: #f6f8fa; margin: 16px 0;">
 <ul>
@@ -118,11 +120,14 @@ $REF$ 중 아래 2가지 조건을 추가로 만족할 경우 **기약행사다�
 </div>
 
 앞으로 이러한 행렬을 $RREF$라 하자. 아래는 $RREF$의 예시이다.
+
 ![RREF 예시](/assets/images/RREF_example.png)
 <br><br>
 
-### 1.3.1. pivot
+#### 1.3.1. pivot
 위 $REF$와 $RREF$의 예시 사진을 보면 pivot position이라는 말이 있다.
+
+<br><br>
 ## 2. 가우스 소거법
 **가우스 소거법(Gaussian elimination)** 이란 기본 행 연산을 여러번 사용해 행렬을 $REF$로 만드는 과정이다. (Lay 교재에서는 행 축약 알고리즘 중 foward phase에 해당한다.)
 
