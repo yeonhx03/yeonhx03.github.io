@@ -52,7 +52,7 @@ $$
 
 **기본 행 연산(elementary row operation)** 은 동치인 선형계로 바꾸기 위한 기본적인 행렬의 연산이다.
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; background-color: #f6f8fa; margin: 16px 0;">
+<div class="concept-box">
 
 <strong>기본 행 연산</strong>
 
@@ -71,7 +71,7 @@ $$
 기본 행 연산은 가역적인 연산이다. 즉, 그 결과를 다시 원래 상태로 되돌리는 역연산이 존재한다.
 어떤 연산의 가역성을 보이려면, 그 연산을 적용한 뒤의 결과를 원래 상태로 되돌릴 수 있는 역연산을 제시하면 된다. 기본 행 연산의 경우, 각 연산은 다음과 같은 방식으로 되돌릴 수 있다.
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; background-color: #f6f8fa; margin: 16px 0;">
+<div class="concept-box">
 <ul>
 <li>1행에 2행의 $c$배를 더했다면, 다시 1행에 2행의 $-c$배를 더해 원래 행으로 만들 수 있다.</li>
 <li>두 행을 바꾼 것은 다시 두 행을 바꾸어 원래로 돌릴 수 있다.</li>
@@ -99,7 +99,7 @@ $$
 
 행렬 $R$이 다음 3가지 조건을 만족시키면, 행렬 $R$을 **행사다리꼴(Row Echelon Form)** 이라 한다. 
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; background-color: #f6f8fa; margin: 16px 0;">
+<div class="concept-box">
 <ul>
 <li> Nonzero row는 항상 모든 zero row보다 위에 있다.</li>
 <li> 행의 선행성분은 그 행보다 위에 있는 행의 선행성분보다 항상 오른쪽에 위치한다. </li>
@@ -112,7 +112,7 @@ $$
 ![REF 예시](/assets/images/REF_example.png){: width="70%" }
 <br>
 $REF$ 중 아래 2가지 조건을 추가로 만족할 경우 **기약행사다리꼴(Reduced Row Echelon Form)** 이라 한다.
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; background-color: #f6f8fa; margin: 16px 0;">
+<div class="concept-box">
 <ul>
 <li> 선행성분은 항상 $1$이다.</li>
 <li> 선행성분 $1$은 항상 그 열에서 유일한 $0$이 아닌 성분이다. 즉, 선행성분인 $1$ 위 아래로는 $0$만 존재해야 한다. </li>

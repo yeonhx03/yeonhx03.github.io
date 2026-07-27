@@ -1,0 +1,21 @@
+<meta id="theme-color" name="theme-color" content="#F7F7F5">
+<meta name="color-scheme" content="light dark">
+<script>
+  (function () {
+    var theme = "light";
+
+    try {
+      theme = localStorage.getItem("blog-theme") === "dark" ? "dark" : "light";
+    } catch (error) {
+      theme = "light";
+    }
+
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.style.colorScheme = theme;
+
+    var themeColor = document.getElementById("theme-color");
+    if (themeColor) {
+      themeColor.setAttribute("content", theme === "dark" ? "#0D0F0E" : "#F7F7F5");
+    }
+  }());
+</script>
