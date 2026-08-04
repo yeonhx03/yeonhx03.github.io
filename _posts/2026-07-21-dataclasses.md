@@ -1,5 +1,5 @@
 ---
-title: "dataclasses"
+title: "dataclass"
 date: 2026-07-21
 categories:
   - Python
