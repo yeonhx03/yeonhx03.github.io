@@ -38,6 +38,21 @@ author:
 footer:
   links: []
 
+comments:
+  provider: "giscus"
+  giscus:
+    repo_id: "R_kgDOS1opbg"
+    category_name: "Announcements"
+    category_id: "DIC_kwDOS1opbs4DDoRS"
+    discussion_term: "pathname"
+    strict: "0"
+    reactions_enabled: "1"
+    emit_metadata: "0"
+    input_position: "bottom"
+    theme: "preferred_color_scheme"
+    lang: "ko"
+    lazy: true
+
 defaults:
   - scope:
       path: ""
@@ -51,7 +66,7 @@ defaults:
       related: false
       toc: true
       toc_sticky: true
-      comments: false
+      comments: true
       mathjax: true
   - scope:
       path: "_pages"

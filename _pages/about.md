@@ -18,9 +18,6 @@ hide_title: true
       개인 공부 기록용 블로그입니다
     </p>
     <div class="about-profile__links" aria-label="Profile links">
-      <span class="about-profile__link about-profile__link--placeholder" aria-label="Email">
-        <i class="fas fa-envelope" aria-hidden="true"></i>
-      </span>
       <a class="about-profile__link" href="https://github.com/{{ site.github_username }}" aria-label="GitHub">
         <i class="fab fa-github" aria-hidden="true"></i>
       </a>

@@ -3,6 +3,7 @@
 
   var storageKey = "blog-theme";
   var root = document.documentElement;
+  var giscusObserver;
 
   function currentTheme() {
     return root.dataset.theme === "dark" ? "dark" : "light";
@@ -16,6 +17,53 @@
     }
   }
 
+  function postGiscusTheme(theme) {
+    var frame = document.querySelector("iframe.giscus-frame");
+
+    if (!frame || !frame.contentWindow) {
+      return false;
+    }
+
+    frame.contentWindow.postMessage(
+      {
+        giscus: {
+          setConfig: {
+            theme: theme === "dark" ? "dark" : "light"
+          }
+        }
+      },
+      "https://giscus.app"
+    );
+
+    return true;
+  }
+
+  function syncGiscusTheme(theme) {
+    var comments = document.getElementById("giscus-comments");
+    var frame = document.querySelector("iframe.giscus-frame");
+
+    if (frame) {
+      frame.addEventListener("load", function () {
+        postGiscusTheme(currentTheme());
+      }, { once: true });
+      postGiscusTheme(theme);
+      return;
+    }
+
+    if (!comments || giscusObserver) {
+      return;
+    }
+
+    giscusObserver = new MutationObserver(function () {
+      if (document.querySelector("iframe.giscus-frame")) {
+        giscusObserver.disconnect();
+        giscusObserver = null;
+        syncGiscusTheme(currentTheme());
+      }
+    });
+    giscusObserver.observe(comments, { childList: true, subtree: true });
+  }
+
   function applyTheme(theme, persist) {
     var nextTheme = theme === "dark" ? "dark" : "light";
     var input = document.querySelector(".theme-toggle__input");
@@ -23,6 +71,7 @@
     root.dataset.theme = nextTheme;
     root.style.colorScheme = nextTheme;
     updateThemeColor(nextTheme);
+    syncGiscusTheme(nextTheme);
 
     if (input) {
       input.checked = nextTheme === "dark";
