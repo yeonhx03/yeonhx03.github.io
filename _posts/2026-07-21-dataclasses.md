@@ -1,6 +1,7 @@
 ---
 title: "dataclass"
 date: 2026-07-21
+published: false
 categories:
   - Python
 tags:
