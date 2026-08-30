@@ -1,9 +1,27 @@
-- title: "AI"
-  categories:
-    - "ML"
 - title: "Math"
   categories:
     - "Linear Algebra"
+    - "Statistics"
+    - "Discrete Mathmatics"
+
 - title: "CS"
   categories:
+    - "Data Structures"
+
+- title: "Dev"
+  categories:
     - "Python"
+
+- title: "AI/ML"
+  categories:
+    - "CV"
+
+- title: "Algorithm"
+  categories:
+    - "PS"
+    - "Methodology"
+
+- title: "Paper Review"
+  categories:
+    - "AI/ML"
+    - "CS"
