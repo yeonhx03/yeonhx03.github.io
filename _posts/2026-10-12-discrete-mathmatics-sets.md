@@ -38,7 +38,7 @@ $$
 Subset의 정의를 논리식으로 쓰면 $p \rightarrow q$ 즉, $\sim p \lor q$꼴이다. 이에 대한 negation은 $\sim ( \sim p \lor q) \equiv p \land \sim q$임을 생각하면 negation 표기는 쉽게 생각할 수 있다.
 
 $$
-A \nsubseteq B \Leftrightarrow \exist x, x \in A \text{ and }x \in B
+A \nsubseteq B \Leftrightarrow \exists x, x \in A \text{ and }x \in B
 $$
 
 ## 3. Element Method: Subset, Set Equality의 증명
