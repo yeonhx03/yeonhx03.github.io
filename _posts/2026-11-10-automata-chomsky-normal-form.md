@@ -1,8 +1,17 @@
-# Chomsky Normal Form
-
-Date: 2026년 11월 10일
-LectureDB: 계산이론과오토마타(*) (https://app.notion.com/p/3c6ea9535c0180bfb1e5c39c294f1ce9?pvs=21)
-시험범위: Yes
+---
+title: "Chomsky Normal Form"
+date: 2026-11-10
+categories:
+  - Automata
+tags:
+  - "Automata"
+  - "CNF"
+  - "Chomsky Normal Form"
+  - "CYK Alogorithm"
+  - "Algorithm"
+math: true
+mathjax: true
+---
 
 ## 1. Chomsky Normal Form
 
@@ -81,7 +90,7 @@ Step 2: 길이가 3 이상인 우변을 분해
 
 $S \to B_aABB_b$의 우변 길이는 4다. 따라서 새 변수 $D_1=ABB_a,\ D_2=BB_a$로 두자. 그러면 우변 길이가 3 이상인 production은 $S \to B_aD_1$, $D_1=AD_2$로 바꿀 수 있다.
 
-따라서 최종적으로 
+따라서 최종적으로  
 
 $$
 \boxed{
@@ -113,7 +122,7 @@ CNF인 grammar $G$와  string $w=a_1 a_2 \cdots a_n$을 생각하자.
 
 CYK Algorithm의 기본적인 idea는 다음과 같다.
 
-$V_{1n}$, 즉 $w_{1n}=w$을 produce할 수 있는 variable 집합을 찾고, 그 안에 start variable $S$가 있다면 $w$는 $G$의 member라고 판단할 수 있다. 
+$V_{1n}$, 즉 $w_{1n}=w$을 produce할 수 있는 variable 집합을 찾고, 그 안에 start variable $S$가 있다면 $w$는 $G$의 member라고 판단할 수 있다.  
 
 $$
 w \in L(G) \iff S \in V_{1n}
@@ -139,24 +148,24 @@ $$
 
 마지막으로 두 index의 거리가 2일 때, 예를 들어 $V_{13}$에 대해 생각해보자. 이번 예를 이해하면 $V_{ij}$로 일반화할 수 있을 것이다.
 
-우선 $V_{13}$의 variable은 $a_1a_2a_3$을 produce하는 변수이다. 이때 우리가 생각할 수 있는 분할은 $a_1 | a_2a_3$, $a_1a_2|a_3$ 2가지이다. 
+우선 $V_{13}$의 variable은 $a_1a_2a_3$을 produce하는 변수이다. 이때 우리가 생각할 수 있는 분할은 $a_1 | a_2a_3$, $a_1a_2|a_3$ 2가지이다.  
 
 ‘왜 $a_1|a_2|a_3$는 안될까’라는 의문이 들면, 3.1.에서 CYK Alogorithm에 주어진 grammar $G$가 CNF이므로, CNF의 grammar를 따라야 한다는 점을 기억하자.
 
 $\mathrm{i} )\ a_1|a_2a_3$ 을 생성하는 Variable
 
-$A \to BC$에서 $B$가 $a_1$을 생성하고, $C$가 $a_2a_3$을 생성하면 되므로 $\{{A \in V\ :\ A \to BC,\ B \in V_{11}, C \in V_{23}} \}$ 임을 어렵지 않게 알 수 있다. 
+$A \to BC$에서 $B$가 $a_1$을 생성하고, $C$가 $a_2a_3$을 생성하면 되므로 $\{A \in V\ :\ A \to BC,\ B \in V_{11}, C \in V_{23}} \}$ 임을 어렵지 않게 알 수 있다.  
 
 $\mathrm{ii} )\ a_1a_2|a_3$ 을 생성하는 Variable
 
-이번엔 $B$가 $a_1a_2$를 생성하고, $C$가 $a_3$을 생성하면 되므로 $\{{A \in V\ :\ A \to BC,\ B \in V_{12}, C \in V_{3}} \}$이다.
+이번엔 $B$가 $a_1a_2$를 생성하고, $C$가 $a_3$을 생성하면 되므로 $\{A \in V\ :\ A \to BC,\ B \in V_{12}, C \in V_{3}} \}$이다.
 
 따라서 $\mathrm{i}),\ \mathrm{ii})$ 을 union으로 연결하면
 
 $$
-V_{13}=\{{A \in V\ :\ A \to BC,\ B \in V_{11}, C \in V_{23}} \}\
+V_{13}=\{A \in V\ :\ A \to BC,\ B \in V_{11}, C \in V_{23} \}\
 \cup \
-\{{A \in V\ :\ A \to BC,\ B \in V_{12}, C \in V_{33}} \}
+\{A \in V\ :\ A \to BC,\ B \in V_{12}, C \in V_{33} \}
 
 $$
 
