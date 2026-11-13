@@ -37,7 +37,7 @@ CNF는 모든 CFG를 일정한 형태로 통일할 수 있기 때문에, CNF로 
 
 $\lambda$ productions, unit-productions가 없는 grammar $G$를 생각하자.
 
-Step 1: $G$를 CFG인 $G_1=(V_1, T_1, S_1, P_1)$로 변환
+**Step 1: $G$를 CFG인 $G_1=(V_1, T_1, S_1, P_1)$로 변환**
 
 - production의 우변 길이가 1이라면, $G$는 unit-productions가 없으므로 $G_1$은 single terminal symbol을 produce하는 $A \rightarrow a$만 가진다.
 - production의 우변 길이가 2 이상이라면, single terminal symbol $a$를 새 Variable $B_a$로 대체하고, $P_1$에 $B_a \rightarrow a$를 추가한다. 이 과정에서 우변에 Variable만 남게 된다.
@@ -57,7 +57,7 @@ Step 1: $G$를 CFG인 $G_1=(V_1, T_1, S_1, P_1)$로 변환
     $$
     
 
-Step 2: $G_1$을 CNF인 $\hat{G}=(\hat{V},\hat{T},S,\hat{P})$로 변환
+**Step 2: $G_1$을 CNF인 $\hat{G}=(\hat{V},\hat{T},S,\hat{P})$로 변환**
 
 - $P_1$에서 우변 길이가 1인 production은 $A \rightarrow a$, 길이가 2인 production은 $A \rightarrow BC$꼴이다. 따라서 이 둘은 CNF를 만족하므로 그대로 $\hat{P}$에 추가한다.
 - $P_1$에서 길이가 3 이상인 production은 $A \rightarrow C_{1}C_{2} \cdots C_{n}$ ($C_i \in V$) 형태이다. 여기서 가장 앞의 $C_1$을 제외한 $C_2 \cdots C_n$을 새 variable $D_1$이 produce하도록 만든다.
@@ -148,17 +148,17 @@ $$
 
 마지막으로 두 index의 거리가 2일 때, 예를 들어 $V_{13}$에 대해 생각해보자. 이번 예를 이해하면 $V_{ij}$로 일반화할 수 있을 것이다.
 
-우선 $V_{13}$의 variable은 $a_1a_2a_3$을 produce하는 변수이다. 이때 우리가 생각할 수 있는 분할은 $a_1 | a_2a_3$, $a_1a_2|a_3$ 2가지이다.  
+우선 $V_{13}$의 variable은 $a_1a_2a_3$을 produce하는 변수이다. 이때 우리가 생각할 수 있는 분할은 $a_1 \mid a_2a_3$, $a_1a_2 \mid a_3$ 2가지이다.  
 
-‘왜 $a_1|a_2|a_3$는 안될까’라는 의문이 들면, 3.1.에서 CYK Alogorithm에 주어진 grammar $G$가 CNF이므로, CNF의 grammar를 따라야 한다는 점을 기억하자.
+\‘왜 $a_1|a_2|a_3$는 안될까\’라는 의문이 들면, 3.1.에서 CYK Alogorithm에 주어진 grammar $G$가 CNF이므로, CNF의 grammar를 따라야 한다는 점을 기억하자.
 
-$\mathrm{i} )\ a_1|a_2a_3$ 을 생성하는 Variable
+**i)** $\ a_1|a_2a_3$ 을 생성하는 Variable
 
-$A \to BC$에서 $B$가 $a_1$을 생성하고, $C$가 $a_2a_3$을 생성하면 되므로 $\{A \in V\ :\ A \to BC,\ B \in V_{11}, C \in V_{23}} \}$ 임을 어렵지 않게 알 수 있다.  
+$A \to BC$에서 $B$가 $a_1$을 생성하고, $C$가 $a_2a_3$을 생성하면 되므로 $\{A \in V\ :\ A \to BC,\ B \in V_{11}, C \in V_{23} \}$ 임을 어렵지 않게 알 수 있다.  
 
-$\mathrm{ii} )\ a_1a_2|a_3$ 을 생성하는 Variable
+**ii) $a_1a_2|a_3$ 을 생성하는 Variable**
 
-이번엔 $B$가 $a_1a_2$를 생성하고, $C$가 $a_3$을 생성하면 되므로 $\{A \in V\ :\ A \to BC,\ B \in V_{12}, C \in V_{3}} \}$이다.
+이번엔 $B$가 $a_1a_2$를 생성하고, $C$가 $a_3$을 생성하면 되므로 $\{ A \in V\ :\ A \to BC,\ B \in V_{12}, C \in V_{3} \}$이다.
 
 따라서 $\mathrm{i}),\ \mathrm{ii})$ 을 union으로 연결하면
 
