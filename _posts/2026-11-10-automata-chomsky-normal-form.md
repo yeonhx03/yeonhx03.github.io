@@ -150,7 +150,7 @@ $$
 
 우선 $V_{13}$의 variable은 $a_1a_2a_3$을 produce하는 변수이다. 이때 우리가 생각할 수 있는 분할은 $a_1 \mid a_2a_3$, $a_1a_2 \mid a_3$ 2가지이다.  
 
-\‘왜 $a_1|a_2|a_3$는 안될까\’라는 의문이 들면, 3.1.에서 CYK Alogorithm에 주어진 grammar $G$가 CNF이므로, CNF의 grammar를 따라야 한다는 점을 기억하자.
+‘왜 $a_1|a_2|a_3$는 안될까’라는 의문이 들면, 3.1.에서 CYK Alogorithm에 주어진 grammar $G$가 CNF이므로, CNF의 grammar를 따라야 한다는 점을 기억하자.
 
 **i)** $\ a_1|a_2a_3$ 을 생성하는 Variable
 
