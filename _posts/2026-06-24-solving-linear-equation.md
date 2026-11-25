@@ -144,7 +144,7 @@ $$
 앞으로 행사다리꼴을 간단하게 $REF$ 라 하자. 아래는 $REF$의 예시이다.
 
 <a id="ref-example"></a>
-![REF 예시](/assets/images/REF_example.png){: width="70%" }
+![REF 예시](https://github.com/user-attachments/assets/6e2d7068-9c24-44af-89d9-44a8cd51c8d0){: width="70%" }
 
 <br>
 $REF$ 중 아래 2가지 조건을 추가로 만족할 경우 **기약행사다리꼴(Reduced Row Echelon Form)** 이라 한다.
@@ -157,7 +157,7 @@ $REF$ 중 아래 2가지 조건을 추가로 만족할 경우 **기약행사다�
 
 앞으로 이러한 행렬을 $RREF$라 하자. 아래는 $RREF$의 예시이다.
 
-![RREF 예시](/assets/images/RREF_example.png){: width="70%" }
+![RREF 예시](https://github.com/user-attachments/assets/5d8683c9-436a-4044-9f7b-8c39766117f3){: width="70%" }
 <br><br>
 
 ### 1.3.1. pivot
