@@ -213,7 +213,7 @@ CYK Algorithm을 적용하는 과정을 이해하기 쉽게, 각 단계별로 �
 
 우선 길이가 1인 substring을 생성하는 variable 집합인 $V_{ii}$를 구하자.
 
-![automata-cyk1.png](/assets/images/automata-cyk1.png)
+![CYK알고리즘 표1](https://github.com/user-attachments/assets/54de4c20-9ad6-41c4-a305-3a575348bf6f){:width="70%"}
 
 계산하면 $V_{11}=\{B\},\ V_{22}=\{A,C\},\ V_{33}=\{A,C\},\ V_{44}=\{B\},\ V_{55}=\{A,C\}$ 을 얻는다.
 
@@ -221,13 +221,13 @@ CYK Algorithm을 적용하는 과정을 이해하기 쉽게, 각 단계별로 �
 
 이제 길이가 2인 substring을 생성하는 variable 집합을 구하고 계산한다. 
 
-![automata-cyk2.png](/assets/images/automata-cyk2.png)
+![CYK알고리즘 표2](https://github.com/user-attachments/assets/36d5e3ef-8729-42cf-9b24-a4bbc0f319b7){:width="70%"}
 
 $V_{12}=\{ X \in V_{11}, Y \in V_{22}\}$이므로 $V_{12}=\{A,S\}$ 이다. 같은 방식으로 계산하면
 
 $V_{23}=\{B\},\ V_{34}=\{C,S\},\ V_{45}=\{A,S\}$이다. 
 
-![automata-cyk2.png](/assets/images/automata-cyk2%201.png)
+![CYK알고리즘 표3](https://github.com/user-attachments/assets/85ed318b-f560-4b4f-a361-63425e9f193a){:width="70%"}
 
 $w_{13}=baa$는 $b\mid aa$ 또는 $ba \mid a$로 나눌 수 있고, 이에 따라 $V_{13}$도 2개 집합의 합집합으로 표현됐던 것을 기억하여 계산하자.
 
@@ -235,11 +235,11 @@ $w_{13}=baa$는 $b\mid aa$ 또는 $ba \mid a$로 나눌 수 있고, 이에 따�
 
 $V_{13}= \varnothing,\ V_{24}= \{B \},\ V_{35}=\{B\}$ 
 
-![automata-cyk4.png](/assets/images/automata-cyk4.png)
+![CYK알고리즘 표4](https://github.com/user-attachments/assets/0641235f-9183-4850-baaa-5b22ecdf4134){:width="70%"}
 
 $V_{14}=\emptyset,\ V_{25}=\{A,C,S\}$
 
-![automata-cyk5.png](/assets/images/automata-cyk5.png)
+![automata-cyk5.png](https://github.com/user-attachments/assets/4f4f1c29-99b0-4431-a7a6-fd1088715b5f){:width="70%"}
 
 $\therefore V_{15}=\{A,C,S\}$ 이다.
 
